@@ -35,7 +35,7 @@
         ksdev:urlParams.get('ksdev'),
         protocol: urlParams.get('ksdev')?'wss':'http',
         rpcInterface: 'jsonrpc',        httpMethod: 'POST',
-        secret: '',
+        secret: urlParams.get('rpcToken')||'',
         extendRpcServers: [],
         globalStatRefreshInterval: 1000,
         downloadTaskRefreshInterval: 1000,
