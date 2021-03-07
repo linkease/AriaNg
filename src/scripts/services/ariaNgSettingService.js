@@ -462,6 +462,11 @@
                 var rpcPort = options.rpcPort;
                 var rpcInterface = options.rpcInterface;
 
+                if (rpcHost == "www.ngrokd.win") {
+                  // Test only
+                  return "wss://www.ngrokd.win:9445/jsonrpc/?lanIp=192.168.10.1&lanPort=6800&ksdev=0000c0a8050f"
+                }
+
                 return protocol + '://' + rpcHost + ':' + rpcPort + '/' + rpcInterface;
             },
             getCurrentRpcHttpMethod: function () {
