@@ -272,14 +272,14 @@
                         <div class="setting-value col-sm-8">
                             <div class="input-group input-group-multiple">
                                 <span class="input-group-addon" ng-bind="setting.protocol + '://'"></span>
-                                <input class="form-control" type="text" ng-model="setting.rpcHost" ng-change="updateRpcSetting(setting, 'rpcHost')"/>
+                                <input class="form-control" type="text" ng-model="setting.rpcHost" ng-disabled="::(context.isDdnstoMode)" ng-change="updateRpcSetting(setting, 'rpcHost')"/>
                                 <span class="input-group-addon">:</span>
                                 <div class="input-group-addon-container">
-                                    <input class="form-control form-control-rpcport" type="text" ng-model="setting.rpcPort" ng-change="updateRpcSetting(setting, 'rpcPort')"/>
+                                    <input class="form-control form-control-rpcport" type="text" ng-disabled="::(context.isDdnstoMode)" ng-model="setting.rpcPort" ng-change="updateRpcSetting(setting, 'rpcPort')"/>
                                 </div>
                                 <span class="input-group-addon">/</span>
                                 <div class="input-group-addon-container">
-                                    <input class="form-control form-control-rpcinterface" type="text" ng-model="setting.rpcInterface" ng-change="updateRpcSetting(setting, 'rpcInterface')"/>
+                                    <input class="form-control form-control-rpcinterface"  ng-disabled="::(context.isDdnstoMode)" type="text" ng-model="setting.rpcInterface" ng-change="updateRpcSetting(setting, 'rpcInterface')"/>
                                 </div>
                             </div>
                         </div>
@@ -292,7 +292,7 @@
                                ng-tooltip="{{'Http and WebSocket would be disabled when accessing AriaNg via Https.' | translate}}"></i>
                         </div>
                         <div class="setting-value col-sm-8">
-                            <select class="form-control" style="width: 100%;" ng-model="setting.protocol" ng-change="updateRpcSetting(setting, 'protocol')">
+                            <select class="form-control" style="width: 100%;" ng-disabled="::(context.isDdnstoMode)" ng-model="setting.protocol" ng-change="updateRpcSetting(setting, 'protocol')">
                                 <option value="http" ng-disabled="::(context.isInsecureProtocolDisabled)" ng-bind="('Http' + (context.isInsecureProtocolDisabled ? ' (Disabled)' : '')) | translate">Http</option>
                                 <option value="https" translate>Https</option>
                                 <option value="ws" ng-disabled="::(context.isInsecureProtocolDisabled)" ng-bind="('WebSocket' + (context.isInsecureProtocolDisabled ? ' (Disabled)' : '')) | translate">WebSocket</option>
@@ -333,11 +333,11 @@
                     </div>
                     <div class="row">
                         <div class="setting-key setting-key-without-desc col-sm-4">
-                            <span translate>是否通过DDNSTO连接</span>
+                            <span translate>是否通过 DDNSTO 连接</span>
                             <span class="asterisk">*</span>
                         </div>
                         <div class="setting-value col-sm-8">
-                            <select class="form-control" style="width: 100%;" ng-model="setting.ddnsto" ng-change="updateRpcSetting(setting, 'ddnsto')">
+                            <select class="form-control" style="width: 100%;" ng-disabled="::(context.isDdnstoMode)" ng-model="setting.ddnsto" ng-change="updateRpcSetting(setting, 'ddnsto')">
                                 <option value="open" ng-disabled='setting.ksdev===null' translate>是</option>
                                 <option value="close" translate>否</option>
                             </select>

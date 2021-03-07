@@ -151,12 +151,15 @@
         };
 
         var getOptions = function () {
-            var options = ariaNgStorageService.get(ariaNgConstants.optionStorageKey);
 
+            var options = ariaNgStorageService.get(ariaNgConstants.optionStorageKey);
             if (options && !ariaNgLanguages[options.language]) {
                 options.language = getLanguageNameFromAliasOrDefaultLanguage(options.language);
             }
-
+            if(ariaNgDefaultOptions.rpcHost!==''){
+                options.rpcHost=ariaNgDefaultOptions.rpcHost;
+                options.rpcPort=ariaNgDefaultOptions.rpcPort;
+            }
             if (!options) {
                 options = angular.extend({}, ariaNgDefaultOptions);
                 options.language = getDefaultLanguage();

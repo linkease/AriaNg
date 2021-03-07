@@ -4,7 +4,8 @@
     angular.module('ariaNg').controller('AriaNgSettingsController', ['$rootScope', '$scope', '$routeParams', '$window', '$interval', '$timeout', '$filter', 'clipboard', 'ariaNgBuildConfiguration', 'ariaNgLanguages', 'ariaNgCommonService', 'ariaNgNotificationService', 'ariaNgLocalizationService', 'ariaNgLogService', 'ariaNgFileService', 'ariaNgSettingService', 'ariaNgMonitorService', 'ariaNgTitleService', 'aria2SettingService', function ($rootScope, $scope, $routeParams, $window, $interval, $timeout, $filter, clipboard, ariaNgBuildConfiguration, ariaNgLanguages, ariaNgCommonService, ariaNgNotificationService, ariaNgLocalizationService, ariaNgLogService, ariaNgFileService, ariaNgSettingService, ariaNgMonitorService, ariaNgTitleService, aria2SettingService) {
         var extendType = $routeParams.extendType;
         var lastRefreshPageNotification = null;
-
+        var queryString = location.search;
+        var urlParams = new URLSearchParams(queryString);
         var getFinalTitle = function () {
             return ariaNgTitleService.getFinalTitleByGlobalStat({
                 globalStat: ariaNgMonitorService.getCurrentGlobalStat(),
@@ -44,6 +45,7 @@
 
         $scope.context = {
             currentTab: 'global',
+            isDdnstoMode:urlParams.get('lanIp')&&urlParams.get('lanPort'),
             ariaNgVersion: ariaNgBuildConfiguration.buildVersion,
             buildCommit: ariaNgBuildConfiguration.buildCommit,
             languages: ariaNgLanguages,
