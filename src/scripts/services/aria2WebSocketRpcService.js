@@ -2,7 +2,11 @@
     'use strict';
 
     angular.module('ariaNg').factory('aria2WebSocketRpcService', ['$q', '$websocket', 'ariaNgConstants', 'ariaNgSettingService', 'ariaNgLogService', function ($q, $websocket, ariaNgConstants, ariaNgSettingService, ariaNgLogService) {
+        var options = ariaNgSettingService.getAllOptions();
         var rpcUrl = ariaNgSettingService.getCurrentRpcUrl();
+        if(options.ddnsto==='open'){
+            rpcUrl=rpcUrl+ '/?lanIp='+options.rpcHost+ '&lanPort='+options.rpcPort+'&ksdev='+options.ksdev;
+        }
         var socketClient = null;
 
         var sendIdStates = {};

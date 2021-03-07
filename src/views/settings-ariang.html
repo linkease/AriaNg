@@ -331,6 +331,18 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="setting-key setting-key-without-desc col-sm-4">
+                            <span translate>是否通过DDNSTO连接</span>
+                            <span class="asterisk">*</span>
+                        </div>
+                        <div class="setting-value col-sm-8">
+                            <select class="form-control" style="width: 100%;" ng-model="setting.ddnsto" ng-change="updateRpcSetting(setting, 'ddnsto')">
+                                <option value="open" ng-disabled='setting.ksdev===null' translate>是</option>
+                                <option value="close" translate>否</option>
+                            </select>
+                        </div>
+                    </div>
                     <div class="row tip no-background no-hover">
                         <span class="asterisk">*</span>
                         <span translate>Changes to the settings take effect after refreshing page.</span>

@@ -214,6 +214,7 @@
 
         var cloneRpcSetting = function (setting) {
             return {
+                ddnsto:setting.ddnsto,
                 rpcAlias: setting.rpcAlias,
                 rpcHost: setting.rpcHost,
                 rpcPort: setting.rpcPort,
@@ -514,6 +515,11 @@
                     }
                 }
 
+                if(field==='ddnsto'){
+                    if(setting[field]==='open'){
+                        setOption('protocol','wss')
+                    }
+                }
                 if (setting.isDefault) {
                     setOption(field, value);
 

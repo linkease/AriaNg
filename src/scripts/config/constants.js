@@ -1,6 +1,7 @@
 (function () {
     'use strict';
-
+    var queryString = location.search;
+    var urlParams = new URLSearchParams(queryString);
     angular.module('ariaNg').constant('ariaNgConstants', {
         title: 'AriaNg',
         appPrefix: 'AriaNg',
@@ -28,11 +29,12 @@
         titleRefreshInterval: 5000,
         browserNotification: false,
         rpcAlias: '',
-        rpcHost: '',
-        rpcPort: '6800',
-        rpcInterface: 'jsonrpc',
-        protocol: 'http',
-        httpMethod: 'POST',
+        rpcHost: urlParams.get('lanIp')||'',//lanIp
+        rpcPort: urlParams.get('lanPort')||'6800',//lanPort
+        ddnsto:urlParams.get('ksdev')?'open':'close',
+        ksdev:urlParams.get('ksdev'),
+        protocol: urlParams.get('ksdev')?'wss':'http',
+        rpcInterface: 'jsonrpc',        httpMethod: 'POST',
         secret: '',
         extendRpcServers: [],
         globalStatRefreshInterval: 1000,
