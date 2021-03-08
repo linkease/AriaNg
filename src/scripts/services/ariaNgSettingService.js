@@ -156,9 +156,9 @@
             if (options && !ariaNgLanguages[options.language]) {
                 options.language = getLanguageNameFromAliasOrDefaultLanguage(options.language);
             }
-            if( options && ariaNgDefaultOptions.rpcHost!==''){
-                options.rpcHost=ariaNgDefaultOptions.rpcHost;
-                options.rpcPort=ariaNgDefaultOptions.rpcPort;
+            if( options ){
+                options.lanPort=ariaNgDefaultOptions.lanPort;
+                options.lanIp=ariaNgDefaultOptions.lanIp;
                 options.ksdev=ariaNgDefaultOptions.ksdev;
             }
             if (!options) {
