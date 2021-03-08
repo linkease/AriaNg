@@ -159,6 +159,7 @@
             if( options && ariaNgDefaultOptions.rpcHost!==''){
                 options.rpcHost=ariaNgDefaultOptions.rpcHost;
                 options.rpcPort=ariaNgDefaultOptions.rpcPort;
+                options.ksdev=ariaNgDefaultOptions.ksdev;
             }
             if (!options) {
                 options = angular.extend({}, ariaNgDefaultOptions);
