@@ -156,7 +156,7 @@
             if (options && !ariaNgLanguages[options.language]) {
                 options.language = getLanguageNameFromAliasOrDefaultLanguage(options.language);
             }
-            if(ariaNgDefaultOptions.rpcHost!==''){
+            if( options && ariaNgDefaultOptions.rpcHost!==''){
                 options.rpcHost=ariaNgDefaultOptions.rpcHost;
                 options.rpcPort=ariaNgDefaultOptions.rpcPort;
             }
