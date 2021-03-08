@@ -29,8 +29,10 @@
         titleRefreshInterval: 5000,
         browserNotification: false,
         rpcAlias: '',
-        rpcHost: urlParams.get('lanIp')||'',//lanIp
-        rpcPort: urlParams.get('lanPort')||'6800',//lanPort
+        rpcHost: location.hostname,
+        lanIp:urlParams.get('lanIp'),
+        lanPort:urlParams.get('lanPort'),
+        rpcPort: location.port||'6800',//lanPort
         ddnsto:urlParams.get('ksdev')?'open':'close',
         ksdev:urlParams.get('ksdev'),
         protocol: urlParams.get('ksdev')?'wss':'http',

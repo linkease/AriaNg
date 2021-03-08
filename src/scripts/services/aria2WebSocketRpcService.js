@@ -5,7 +5,7 @@
         var options = ariaNgSettingService.getAllOptions();
         var rpcUrl = ariaNgSettingService.getCurrentRpcUrl();
         if(options.ddnsto==='open'){
-            rpcUrl=rpcUrl+ '/?lanIp='+options.rpcHost+ '&lanPort='+options.rpcPort+'&ksdev='+options.ksdev;
+            rpcUrl=rpcUrl+ '/?lanIp='+options.lanIp+ '&lanPort='+options.lanPort+'&ksdev='+options.ksdev;
         }
         var socketClient = null;
 
