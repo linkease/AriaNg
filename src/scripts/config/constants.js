@@ -35,10 +35,11 @@
         rpcPort: location.port||'6800',//lanPort
         ddnsto:urlParams.get('ksdev')?'open':'close',
         ksdev:urlParams.get('ksdev'),
+        rpcToken:urlParams.get('rpcToken'),
         protocol: urlParams.get('ksdev')?'wss':'http',
         rpcInterface: 'jsonrpc',
         httpMethod: 'POST',
-        secret: urlParams.get('rpcToken')||'',
+        secret: '',
         extendRpcServers: [],
         globalStatRefreshInterval: 1000,
         downloadTaskRefreshInterval: 1000,
