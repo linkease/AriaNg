@@ -160,6 +160,9 @@
                 options.lanPort=ariaNgDefaultOptions.lanPort;
                 options.lanIp=ariaNgDefaultOptions.lanIp;
                 options.ksdev=ariaNgDefaultOptions.ksdev;
+                if(ariaNgDefaultOptions.ksdev){
+                    options.rpcPort = ariaNgDefaultOptions.rpcPort;
+                }
                 if(ariaNgDefaultOptions.rpcToken){
                     options.secret = ariaNgDefaultOptions.rpcToken;
                 }

@@ -32,7 +32,7 @@
         rpcHost: location.hostname,
         lanIp:urlParams.get('lanIp'),
         lanPort:urlParams.get('lanPort'),
-        rpcPort: location.port||'6800',//lanPort
+        rpcPort: location.port||(location.protocol==='https'?443:80),//lanPort
         ddnsto:urlParams.get('ksdev')?'open':'close',
         ksdev:urlParams.get('ksdev'),
         rpcToken:urlParams.get('rpcToken'),
